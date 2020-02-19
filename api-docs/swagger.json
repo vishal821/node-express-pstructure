@@ -1,0 +1,48 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Project Name API Documentation",
+        "description": "",
+        "version": "1.0"
+    },
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/login": {
+            "post": {
+                "x-swagger-router-controller": "user.controller",
+                "operationId": "index",
+                "tags": [
+                    "user-login"
+                ],
+                "description": "This api is used for users login",
+                "parameters": [
+                    {
+                        "name": "x-api-key",
+                        "in": "header",
+                        "type": "string",
+                        "required": "true"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties" : {
+                                "email" : {
+                                    "type" : "string"
+                                },
+                                "password" : {
+                                    "type" : "string"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    }
+}
